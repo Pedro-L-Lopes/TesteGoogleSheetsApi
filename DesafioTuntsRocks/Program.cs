@@ -72,30 +72,45 @@ class Program
 
     static void UpdateSpreadsheet(SheetsService sheetsService, string spreadsheetId, List<Student> students)
     {
-        var updateValues = new List<IList<object>>();
-
-        updateValues.Add(new List<object> { "Nome", "P1", "P2", "P3", "Faltas", "Média", "Situação" });
-
-        foreach (var student in students)
+        try
         {
-            updateValues.Add(new List<object>
+            var updateValues = new List<IList<object>>();
+
+            // Adiciona as informações do cabeçalho
+            updateValues.Add(new List<object> { "Engenharia de Software" });
+            updateValues.Add(new List<object> { "Total de aulas no semestre: 60"});
+            updateValues.Add(new List<object> { "Matricula", "Aluno", "Faltas", "P1", "P2", "P3", "Situação", "Nota para Aprovação Final" });
+
+            // Adiciona os dados dos alunos
+            foreach (var (index, student) in students.Select((s, i) => (i + 1, s)))
             {
+                updateValues.Add(new List<object>
+            {
+                index, // Matrícula
                 student.Name,
+                student.Absences,
                 student.P1,
                 student.P2,
                 student.P3,
-                student.Absences,
-                student.Average,
-                student.FinalExamGrade,
-                student.Status
+                student.Status,
+                student.FinalExamGrade
             });
+            }
+
+            string updateRange = "engenharia_de_software";
+
+            var updateRequest = sheetsService.Spreadsheets.Values.Update(new ValueRange { Values = updateValues }, spreadsheetId, updateRange);
+            updateRequest.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.RAW;
+
+            var updateResponse = updateRequest.Execute();
+
+            Console.WriteLine($"Atualização bem-sucedida! {updateResponse.UpdatedCells} células foram atualizadas.");
         }
-
-        string updateRange = "engenharia_de_software";
-
-        var updateRequest = sheetsService.Spreadsheets.Values.Update(new ValueRange { Values = updateValues }, spreadsheetId, updateRange);
-        updateRequest.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.RAW;
-
-        updateRequest.Execute();
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erro ao atualizar a planilha: {ex.Message}");
+        }
     }
+
+
 }
