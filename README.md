@@ -13,16 +13,16 @@ Média (m) Situação:
 </ul>
 Se o número de faltas ultrapassar 25% do número total de aulas, o aluno terá a situação de "Reprovado por Falta", independentemente da média.
   Se a situação for "Exame Final", é necessário calcular a "Nota para Aprovação Final" (naf) de cada aluno de acordo com a seguinte fórmula:
-5 <= (m + naf)/2
-</br>Se a situação do aluno for diferente de "Exame Final", preencha o campo "Nota para Aprovação Final" com 0. (Arredonda o resultado para o próximo número inteiro (aumente) se necessário)
+5 <= (m + naf)/2 (Arredonda o resultado para o próximo número inteiro (aumente) se necessário)
+</br>Se a situação do aluno for diferente de "Exame Final", preenche o campo "Nota para Aprovação Final" com 0. 
 
 <h1>Tecnologias</h1>
-Aplicação de console feita utilizando C# .NET 6 usando GoogleSheetsApi (com conta de serviço)
+Aplicação de console feita utilizando C# .NET 6 consumindo GoogleSheetsApi (com conta de serviço)
 
 <h3>pacotes utilizados:</h3>
 	<ul>
     <li>Google.Apis.Auth - Versão: 1.66.0</li>
-    <li>	Google.Apis.Sheets.v4 - Versão 1.66.0.3148</li>
+    <li>Google.Apis.Sheets.v4 - Versão 1.66.0.3148</li>
   </ul>
 
 <h3>
