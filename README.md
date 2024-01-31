@@ -1,6 +1,7 @@
 <h1>Desafio Tunts.Rocks 2024 - Documentação do Desafio Técnico</h1>
 
-<p>Aplicação que le uma planilha do Google Sheets, recupera as informações necessárias, calcula e escreve os resultados de volta na planilha.</p>
+<p>Esta aplicação em C# .NET 6 foi desenvolvida para ler uma planilha do Google Sheets, extrair informações relevantes, realizar cálculos específicos e atualizar a planilha com os resultados processados</p>
+<p>A estrutura de arquivos é bem simples devida a baixa complexidade do projeto</p>
 
 <h2>Regras de negócio</h2>
 Calcula a situação de cada aluno com base na média das três provas (P1, P2 e P3), de acordo com a tabela:
@@ -17,7 +18,7 @@ Se o número de faltas ultrapassar 25% do número total de aulas, o aluno terá 
 </br>Se a situação do aluno for diferente de "Exame Final", preenche o campo "Nota para Aprovação Final" com 0. 
 
 <h1>Tecnologias</h1>
-Aplicação de console feita utilizando C# .NET 6 consumindo GoogleSheetsApi (com conta de serviço)
+Aplicação de console feita utilizando C# .NET 6 consumindo GoogleSheetsApi com uma conta de serviço
 
 <h3>pacotes utilizados:</h3>
 	<ul>
@@ -34,25 +35,22 @@ Descrição das classes</h3>
   <li><b>Program:</b> Recupera dados de uma planilha específica, processa os dados para criar uma lista de alunos, calcula seus status usando uma classe Calculator, exibe os resultados no console e atualiza a planilha com as informações calculadas.</li>
 </ul>
 
-<h3>Necessário (Recrutador):</h3>
-Instalar os pacotes utilizados e suas respectivas versões, crie um arquivo chamado "credentials.json" no mesmo nível da classe program e, cole as informações da credencial fornecida. Após isso vá até a classe "GoogleSheetsService" e coloque o caminho do arquivo "credentials.json" da sua maquina na variavel "CredentialsPath" (se estiver usando o Visual Studio clique com o botão direito sobre o arquivo "credentials.json" e clique em "copiar o caminho completo".
+<h3>Configurações necessário:</h3>
+<ul>
+	<ol>1- Certifique-se de ter o .NET 6 instalado</ol>
+	<ol>2 - Instale os pacotes utilizados e suas respectivas versões.</ol>
+	<ol>3 - Crie um arquivo chamado "credentials.json" no mesmo nível da classe Program e cole as informações da credencial fornecida.</ol>
+	<ol>4 - Na classe "GoogleSheetsService", atribua o caminho completo do arquivo "credentials.json" à variável "CredentialsPath" (se estiver usando o Visual Studio, clique com o botão direito sobre o arquivo 	"credentials.json" e selecione "copiar o caminho completo").</ol>
+</ul>
 
 <h3>Comandos:</h3>
-Certifique-se de ter o .NET 6 instalado:
-</br>
-Abra um terminal ou prompt de comando:
-Você pode usar o terminal integrado em seu ambiente de desenvolvimento (por exemplo, Visual Studio Code, Visual Studio) ou um prompt de comando padrão do sistema.
+<ul>
+	<ol>1 - Abra um terminal ou prompt de comando.</ol>
+	<ol>2 - Navegue até o diretório do projeto usando o comando cd.</ol>
+	<ol>3 - Execute dotnet restore para restaurar as dependências do projeto.</ol>
+	<ol>4 - Execute dotnet build para compilar o projeto.</ol>
+	<ol>5 - Execute dotnet run para executar o aplicativo.</ol>
+</ul>
 
-Navegue até o diretório do projeto:
-Use o comando cd para navegar até o diretório que contém seu projeto C#.
-
-Restaure as dependências do projeto:
-Execute o comando dotnet restore para restaurar as dependências do projeto.
-
-Compile o projeto:
-Execute o comando dotnet build para compilar o projeto.
-
-Execute o aplicativo:
-Execute o comando dotnet run para executar o aplicativo.
 
 <h4>Qualquer duvida entre em contato: https://www.linkedin.com/in/pedro-lucas-41a838241/</h4>
