@@ -8,7 +8,7 @@ namespace DesafioTuntsRocks
     class GoogleSheetsService
     {
         // Path to the JSON file containing Google Sheets API credentials
-        private static readonly string CredentialsPath = @"C:\\Users\\ghost\\Documents\\estudos\\TuntsRocks\\DesafioTuntsRocks\\DesafioTuntsRocks\\credentials.json";
+        private static readonly string CredentialsPath = @"C:YOUR PATH\\credentials.json";
 
         // Scopes required for accessing Google Sheets
         private static readonly string[] Scopes = { SheetsService.Scope.Spreadsheets };
