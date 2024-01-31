@@ -1,6 +1,6 @@
 <h1>Desafio Tunts.Rocks 2024 - Documentação do Desafio Técnico</h1>
 
-<p>Sobre: Aplicação que le uma planilha do Google Sheets, recupera as informações necessárias, calcula e escreve os resultados de volta na planilha.</p>
+<p>Aplicação que le uma planilha do Google Sheets, recupera as informações necessárias, calcula e escreve os resultados de volta na planilha.</p>
 
 <h2>Regras de negócio</h2>
 Calcula a situação de cada aluno com base na média das três provas (P1, P2 e P3), de acordo com a tabela:
