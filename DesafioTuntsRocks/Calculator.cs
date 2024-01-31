@@ -28,14 +28,12 @@
                 else if (student.Average >= 50 && student.Average < 70)
                 {
                     // Calculate the Final Exam Grade (NaF) based on the given formula
-                    student.FinalExamGrade = Math.Ceiling(50 - student.Average / 2);
+                    student.FinalExamGrade = (int)Math.Ceiling(100 - student.Average);
 
-                    // Ensure the Final Exam Grade is not negative
-                    if (student.FinalExamGrade < 0)
+                     if (student.FinalExamGrade < 0)
                     {
                         student.FinalExamGrade = 0;
                     }
-
                     student.Status = "Exame final";
                 }
                 else

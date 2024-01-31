@@ -1,8 +1,6 @@
 ﻿using Google.Apis.Auth.OAuth2;
 using Google.Apis.Services;
 using Google.Apis.Sheets.v4;
-using System;
-using System.IO;
 
 namespace DesafioTuntsRocks
 {
@@ -14,8 +12,6 @@ namespace DesafioTuntsRocks
 
         // Scopes required for accessing Google Sheets
         private static readonly string[] Scopes = { SheetsService.Scope.Spreadsheets };
-
-        static SheetsService service;
 
         // Method to initialize and return a SheetsService instance
         public static SheetsService InitializeSheetsService()
@@ -30,7 +26,7 @@ namespace DesafioTuntsRocks
                         .CreateScoped(Scopes);
 
                     // Initialize a new SheetsService with the created credential
-                    service = new SheetsService(new BaseClientService.Initializer()
+                    var service = new SheetsService(new BaseClientService.Initializer()
                     {
                         HttpClientInitializer = credential,
                         ApplicationName = "DesafioTuntsRocks",
